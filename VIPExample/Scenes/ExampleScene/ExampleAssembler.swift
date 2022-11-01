@@ -18,8 +18,10 @@ struct ExampleAssembler: ExampleAssembling {
             getExampleItemsWorker: getExampleItemsWorker
         )
         
+        let tableViewDataSource: ExampleTableViewDataSource = .init()
         let viewController: ExampleViewController = .init(
-            interactor: interactor
+            interactor: interactor,
+            tableViewDataSource: tableViewDataSource
         )
         
         let router: ExampleRouter = .init(
