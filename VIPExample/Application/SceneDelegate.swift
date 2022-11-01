@@ -22,20 +22,26 @@ extension SceneDelegate {
     }
     
     private func makeExampleViewController() -> UIViewController {
-        let itemsService: ItemsService = .init()
+        let presenter: ExamplePresenter = .init()
         
-        let viewModel: ExampleViewModel = .init(
+        let itemsService: ItemsService = .init()
+        let getExampleItemsWorker: GetExampleItemsWorker = .init(
             itemsService: itemsService
         )
         
-        let viewController: ExampleViewController = .init(
-            viewModel: viewModel
+        let interactor: ExampleInteractor = .init(
+            presenter: presenter,
+            getExampleItemsWorker: getExampleItemsWorker
         )
         
-        viewModel.delegate = viewController
+        let exampleViewController: ExampleViewController = .init(
+            interactor: interactor
+        )
+        
+        presenter.viewController = exampleViewController
         
         return UINavigationController(
-            rootViewController: viewController
+            rootViewController: exampleViewController
         )
     }
 }
