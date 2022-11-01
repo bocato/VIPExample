@@ -5,7 +5,11 @@ protocol ExampleBusinessLogic {
     func selectExampleItem(_ request: ExampleScene.Selection.Request)
 }
 
-final class ExampleInteractor: ExampleBusinessLogic {
+protocol ExampleDataStore {
+    var selectedItem: ExampleItem? { get set }
+}
+
+final class ExampleInteractor: ExampleBusinessLogic, ExampleDataStore {
     
     // MARK: - Dependencies
     
@@ -15,6 +19,7 @@ final class ExampleInteractor: ExampleBusinessLogic {
     // MARK: - Private Properties
     
     private var exampleItems = [ExampleItem]()
+    var selectedItem: ExampleItem?
     
     // MARK: - Initialization
     
@@ -44,7 +49,9 @@ final class ExampleInteractor: ExampleBusinessLogic {
     }
     
     func selectExampleItem(_ request: ExampleScene.Selection.Request) {
-        let response: ExampleScene.Selection.Response = exampleItems[request.index]
+        let selectedItem = exampleItems[request.index]
+        let response: ExampleScene.Selection.Response = selectedItem
+        self.selectedItem = selectedItem
         presenter.presentExampleItemsSelection(response)
     }
 }

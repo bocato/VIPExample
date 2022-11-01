@@ -3,13 +3,16 @@ import UIKit
 protocol ExampleViewDisplayLogic: AnyObject {
     func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel)
     func displayExampleItemsError(_ viewModel: ExampleScene.List.Error)
-    func displayExampleItemsSelection(_ viewModel: ExampleScene.Selection.ViewModel)
+    func displayExampleItemsSelection()
 }
 
 final class ExampleViewController: UIViewController {
     // MARK: - Dependencies
     
     private let interactor: ExampleBusinessLogic
+    
+    typealias Router = ExampleRoutingLogic & ExampleDataPassing
+    var router: Router!
     
     // MARK: - Properties
     
@@ -95,19 +98,6 @@ final class ExampleViewController: UIViewController {
             ]
         )
     }
-    
-    // MARK: - Helpers
-    
-    private func presentAlert(_ data: ExampleScene.AlertData) {
-        let alertController = UIAlertController(
-            title: data.title,
-            message: data.message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true)
-    }
 }
 
 // MARK: - ExampleViewDisplayLogic
@@ -121,11 +111,11 @@ extension ExampleViewController: ExampleViewDisplayLogic {
     }
     
     func displayExampleItemsError(_ viewModel: ExampleScene.List.Error) {
-        presentAlert(viewModel)
+        router.routeToErrorAlert(viewModel)
     }
     
-    func displayExampleItemsSelection(_ viewModel: ExampleScene.Selection.ViewModel) {
-        presentAlert(viewModel)
+    func displayExampleItemsSelection() {
+        router.routeToSelectedItem()
     }
 }
 

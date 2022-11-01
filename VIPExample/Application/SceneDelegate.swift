@@ -34,14 +34,20 @@ extension SceneDelegate {
             getExampleItemsWorker: getExampleItemsWorker
         )
         
-        let exampleViewController: ExampleViewController = .init(
+        let viewController: ExampleViewController = .init(
             interactor: interactor
         )
         
-        presenter.viewController = exampleViewController
+        let router: ExampleRouter = .init(
+            viewController: viewController
+        )
+        
+        router.dataStore = interactor
+        presenter.viewController = viewController
+        viewController.router = router
         
         return UINavigationController(
-            rootViewController: exampleViewController
+            rootViewController: viewController
         )
     }
 }

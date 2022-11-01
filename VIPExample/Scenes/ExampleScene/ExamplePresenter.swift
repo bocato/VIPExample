@@ -33,11 +33,7 @@ final class ExamplePresenter: ExamplePresentationLogic {
     }
     
     func presentExampleItemsSelection(_ response: ExampleScene.Selection.Response) {
-        let viewModel = ExampleScene.Selection.ViewModel(
-            title: response.name,
-            message: response.fullDescription
-        )
-        viewController?.displayExampleItemsSelection(viewModel)
+        viewController?.displayExampleItemsSelection()
     }
     
 }
