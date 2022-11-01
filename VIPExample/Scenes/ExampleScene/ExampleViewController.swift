@@ -1,9 +1,19 @@
 import UIKit
 
+protocol ExampleViewDisplayLogic: AnyObject {
+    func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel)
+    func displayExampleItemsError(_ viewModel: ExampleScene.List.Error)
+    func displayExampleItemsSelection(_ viewModel: ExampleScene.Selection.ViewModel)
+}
+
 final class ExampleViewController: UIViewController {
     // MARK: - Dependencies
     
-    private let viewModel: ExampleViewModel
+    private let interactor: ExampleBusinessLogic
+    
+    // MARK: - Properties
+    
+    private var viewModel: ExampleScene.List.ViewModel = .init(items: [])
     
     // MARK: - UI
     
@@ -31,9 +41,9 @@ final class ExampleViewController: UIViewController {
     // MARK: - Initialization
     
     init(
-        viewModel: ExampleViewModel
+        interactor: ExampleBusinessLogic
     ) {
-        self.viewModel = viewModel
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,7 +56,7 @@ final class ExampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.loadExampleItemsList()
+        interactor.loadExampleItemsList(.init())
     }
     
     override func loadView() {
@@ -88,7 +98,7 @@ final class ExampleViewController: UIViewController {
     
     // MARK: - Helpers
     
-    private func presentAlert(_ data: AlertData) {
+    private func presentAlert(_ data: ExampleScene.AlertData) {
         let alertController = UIAlertController(
             title: data.title,
             message: data.message,
@@ -102,27 +112,20 @@ final class ExampleViewController: UIViewController {
 
 // MARK: - ExampleViewDisplayLogic
 
-extension ExampleViewController: ExampleViewModelDelegate {
-    func listDataDidFinishLoading() {
+extension ExampleViewController: ExampleViewDisplayLogic {
+    func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel) {
+        self.viewModel = viewModel
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
-    func itemsServiceErrorDidFail(_ error: ItemsServiceError) {
-        let alertData: AlertData = .init(
-            title: "Error",
-            message: "Could not load example items."
-        )
-        presentAlert(alertData)
+    func displayExampleItemsError(_ viewModel: ExampleScene.List.Error) {
+        presentAlert(viewModel)
     }
     
-    func shouldPresentSelectedItem(_ item: ItemViewData) {
-        let alertData: AlertData = .init(
-            title: item.title,
-            message: item.description
-        )
-        presentAlert(alertData)
+    func displayExampleItemsSelection(_ viewModel: ExampleScene.Selection.ViewModel) {
+        presentAlert(viewModel)
     }
 }
 
@@ -149,7 +152,7 @@ extension ExampleViewController: UITableViewDataSource {
 extension ExampleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        viewModel.selectExampleItemAtIndex(indexPath.row)
+        interactor.selectExampleItem(.init(index: indexPath.row))
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
