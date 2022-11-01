@@ -12,8 +12,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - RootView Configuration
 extension SceneDelegate {
     private func setupRootViewController(windowScene: UIWindowScene?) {
-        let rootViewController = makeExampleViewController()
-        
+        let rootViewController = getRootViewController()
         let frame = windowScene?.coordinateSpace.bounds ?? UIScreen.main.bounds
         window = .init(frame: frame)
         window?.windowScene = windowScene
@@ -21,33 +20,8 @@ extension SceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    private func makeExampleViewController() -> UIViewController {
-        let presenter: ExamplePresenter = .init()
-        
-        let itemsService: ItemsService = .init()
-        let getExampleItemsWorker: GetExampleItemsWorker = .init(
-            itemsService: itemsService
-        )
-        
-        let interactor: ExampleInteractor = .init(
-            presenter: presenter,
-            getExampleItemsWorker: getExampleItemsWorker
-        )
-        
-        let viewController: ExampleViewController = .init(
-            interactor: interactor
-        )
-        
-        let router: ExampleRouter = .init(
-            viewController: viewController
-        )
-        
-        router.dataStore = interactor
-        presenter.viewController = viewController
-        viewController.router = router
-        
-        return UINavigationController(
-            rootViewController: viewController
-        )
+    private func getRootViewController() -> UIViewController {
+        let exampleAssembler: ExampleAssembler = .init()
+        return exampleAssembler.makeViewController()
     }
 }
