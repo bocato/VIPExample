@@ -22,7 +22,7 @@ enum ExampleScene {
             let index: Int
         }
         typealias Response = ExampleItem
-        typealias ViewModel = AlertData
+        struct ViewModel {}
     }
 
     // Common
