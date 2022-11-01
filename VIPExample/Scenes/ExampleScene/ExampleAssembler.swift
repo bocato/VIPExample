@@ -5,10 +5,12 @@ protocol ExampleAssembling {
 }
 
 struct ExampleAssembler: ExampleAssembling {
+    @Dependency var itemsService: ItemsServiceProtocol
+    
     func makeViewController() -> UIViewController {
+        
         let presenter: ExamplePresenter = .init()
         
-        let itemsService: ItemsService = .init()
         let getExampleItemsWorker: GetExampleItemsWorker = .init(
             itemsService: itemsService
         )
