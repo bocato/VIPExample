@@ -19,9 +19,11 @@ struct ExampleAssembler: ExampleAssembling {
         )
         
         let tableViewDataSource: ExampleTableViewDataSource = .init()
+        let tableViewDelegate: ExampleTableViewDelegate = .init()
         let viewController: ExampleViewController = .init(
             interactor: interactor,
-            tableViewDataSource: tableViewDataSource
+            tableViewDataSource: tableViewDataSource,
+            tableViewDelegate: tableViewDelegate
         )
         
         let router: ExampleRouter = .init(

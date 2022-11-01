@@ -13,6 +13,7 @@ final class ExampleViewController: UIViewController {
     private let interactor: ExampleBusinessLogic
     var router: Router?
     private let tableViewDataSource: ExampleTableViewDataSource
+    private let tableViewDelegate: ExampleTableViewDelegate
     
     // MARK: - Properties
     
@@ -26,10 +27,12 @@ final class ExampleViewController: UIViewController {
     
     init(
         interactor: ExampleBusinessLogic,
-        tableViewDataSource: ExampleTableViewDataSource
+        tableViewDataSource: ExampleTableViewDataSource,
+        tableViewDelegate: ExampleTableViewDelegate
     ) {
         self.interactor = interactor
         self.tableViewDataSource = tableViewDataSource
+        self.tableViewDelegate = tableViewDelegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -48,7 +51,7 @@ final class ExampleViewController: UIViewController {
     override func loadView() {
         view = ExampleView(
             tableViewDataSource: tableViewDataSource,
-            tableViewDelegate: self
+            tableViewDelegate: tableViewDelegate
         )
         setupUI()
     }
@@ -58,6 +61,15 @@ final class ExampleViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Example View Controller"
+        bindTableViewActions()
+    }
+    
+    private func bindTableViewActions() {
+        tableViewDelegate.actions = .init(
+            onDidSelectRowAtIndexPath: { [interactor] indexPath in
+                interactor.selectExampleItem(.init(index: indexPath.row))
+            }
+        )
     }
 }
 
@@ -77,18 +89,5 @@ extension ExampleViewController: ExampleViewDisplayLogic {
     
     func displayExampleItemsSelection() {
         router?.routeToSelectedItem()
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension ExampleViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        interactor.selectExampleItem(.init(index: indexPath.row))
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
     }
 }
