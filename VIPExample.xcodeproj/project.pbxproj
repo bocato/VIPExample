@@ -10,6 +10,7 @@
 		E50DCEA2290E62AE002358D3 /* Autolayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */; };
 		E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA329103828002358D3 /* ExampleRouter.swift */; };
 		E50DCEA629104070002358D3 /* ExampleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA529104070002358D3 /* ExampleAssembler.swift */; };
+		E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEAC2910F2F9002358D3 /* ExampleView.swift */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Autolayout+Extensions.swift"; sourceTree = "<group>"; };
 		E50DCEA329103828002358D3 /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
 		E50DCEA529104070002358D3 /* ExampleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssembler.swift; sourceTree = "<group>"; };
+		E50DCEAC2910F2F9002358D3 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50DCEAE2910F38E002358D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5668FBE28FC4ED300DECA54 /* Cells */,
+				E50DCEAC2910F2F9002358D3 /* ExampleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E5668F7D28FC4E2F00DECA54 = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E5668FC528FC4F7300DECA54 /* Workers */,
-				E5668FBE28FC4ED300DECA54 /* Cells */,
+				E50DCEAE2910F38E002358D3 /* View */,
 				E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */,
 				E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */,
 				E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */,
@@ -331,6 +342,7 @@
 				E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */,
 				E5668FDA28FC564E00DECA54 /* NSObject+ClassName.swift in Sources */,
 				E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */,
+				E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */,
 				E5668FC728FC4F8800DECA54 /* GetExampleItemsWorker.swift in Sources */,
 				E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */,
 				E5668FC428FC4F4800DECA54 /* ExamplePresenter.swift in Sources */,

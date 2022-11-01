@@ -12,34 +12,17 @@ final class ExampleViewController: UIViewController {
     private let interactor: ExampleBusinessLogic
     
     typealias Router = ExampleRoutingLogic & ExampleDataPassing
-    var router: Router!
+    var router: Router?
     
     // MARK: - Properties
     
     private var viewModel: ExampleScene.List.ViewModel = .init(items: [])
     
-    // MARK: - UI
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .white
-        tableView.allowsSelection = true
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = .lightGray
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.estimatedSectionFooterHeight = 0
-        tableView.sectionFooterHeight = 0
-        tableView.register(
-            ExampleItemTableViewCell.self,
-            forCellReuseIdentifier: ExampleItemTableViewCell.className
-        )
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
-    
+    typealias CustomView = ExampleViewInterface
+    var customView: CustomView? {
+        get { view as? CustomView }
+        set { view = newValue }
+    }
     
     // MARK: - Initialization
     
@@ -63,7 +46,10 @@ final class ExampleViewController: UIViewController {
     }
     
     override func loadView() {
-        super.loadView()
+        view = ExampleView(
+            tableViewDataSource: self,
+            tableViewDelegate: self
+        )
         setupUI()
     }
     
@@ -72,31 +58,6 @@ final class ExampleViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Example View Controller"
-        addSubviews()
-        constrainSubviews()
-    }
-    
-    private func addSubviews() {
-        view.addSubview(tableView)
-    }
-    
-    private func constrainSubviews() {
-        constrainTableView()
-    }
-    
-    private func constrainTableView() {
-        tableView.layout(
-            using: [
-                tableView.topAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.topAnchor
-                ),
-                tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-                tableView.bottomAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.bottomAnchor
-                ),
-                tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
-            ]
-        )
     }
 }
 
@@ -106,16 +67,16 @@ extension ExampleViewController: ExampleViewDisplayLogic {
     func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel) {
         self.viewModel = viewModel
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.customView?.reloadTableView()
         }
     }
     
     func displayExampleItemsError(_ viewModel: ExampleScene.List.Error) {
-        router.routeToErrorAlert(viewModel)
+        router?.routeToErrorAlert(viewModel)
     }
     
     func displayExampleItemsSelection() {
-        router.routeToSelectedItem()
+        router?.routeToSelectedItem()
     }
 }
 
