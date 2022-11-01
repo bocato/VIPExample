@@ -13,6 +13,8 @@
 		E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEAC2910F2F9002358D3 /* ExampleView.swift */; };
 		E50DCEB12911B4A7002358D3 /* ExampleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */; };
 		E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */; };
+		E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB52911B970002358D3 /* ServiceLocator.swift */; };
+		E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB72911B9A7002358D3 /* Dependency.swift */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		E50DCEAC2910F2F9002358D3 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDataSource.swift; sourceTree = "<group>"; };
 		E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDelegate.swift; sourceTree = "<group>"; };
+		E50DCEB52911B970002358D3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		E50DCEB72911B9A7002358D3 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 				E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		E50DCEB42911B92B002358D3 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEB52911B970002358D3 /* ServiceLocator.swift */,
+				E50DCEB72911B9A7002358D3 /* Dependency.swift */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 		E5668F7D28FC4E2F00DECA54 = {
@@ -184,6 +197,7 @@
 		E5668FC828FC54DF00DECA54 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E50DCEB42911B92B002358D3 /* DependencyInjection */,
 				E5668FD428FC564200DECA54 /* Extensions */,
 				E5668FC928FC554600DECA54 /* UI */,
 			);
@@ -347,10 +361,12 @@
 				E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */,
 				E5668FD128FC55DA00DECA54 /* ViewCode.swift in Sources */,
 				E50DCEB12911B4A7002358D3 /* ExampleTableViewDataSource.swift in Sources */,
+				E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */,
 				E5668FD228FC55DA00DECA54 /* Metrics.swift in Sources */,
 				E50DCEA2290E62AE002358D3 /* Autolayout+Extensions.swift in Sources */,
 				E5668FC228FC4F3500DECA54 /* ExampleInteractor.swift in Sources */,
 				E5668FC028FC4EE500DECA54 /* ExampleViewController.swift in Sources */,
+				E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */,
 				E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */,
 				E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */,
 				E5668FE028FC5AE600DECA54 /* ItemEntity.swift in Sources */,
