@@ -9,14 +9,12 @@ protocol ExampleViewDisplayLogic: AnyObject {
 final class ExampleViewController: UIViewController {
     // MARK: - Dependencies
     
-    private let interactor: ExampleBusinessLogic
-    
     typealias Router = ExampleRoutingLogic & ExampleDataPassing
+    private let interactor: ExampleBusinessLogic
     var router: Router?
+    private let tableViewDataSource: ExampleTableViewDataSource
     
     // MARK: - Properties
-    
-    private var viewModel: ExampleScene.List.ViewModel = .init(items: [])
     
     typealias CustomView = ExampleViewInterface
     var customView: CustomView? {
@@ -27,9 +25,11 @@ final class ExampleViewController: UIViewController {
     // MARK: - Initialization
     
     init(
-        interactor: ExampleBusinessLogic
+        interactor: ExampleBusinessLogic,
+        tableViewDataSource: ExampleTableViewDataSource
     ) {
         self.interactor = interactor
+        self.tableViewDataSource = tableViewDataSource
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -47,7 +47,7 @@ final class ExampleViewController: UIViewController {
     
     override func loadView() {
         view = ExampleView(
-            tableViewDataSource: self,
+            tableViewDataSource: tableViewDataSource,
             tableViewDelegate: self
         )
         setupUI()
@@ -65,7 +65,7 @@ final class ExampleViewController: UIViewController {
 
 extension ExampleViewController: ExampleViewDisplayLogic {
     func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel) {
-        self.viewModel = viewModel
+        tableViewDataSource.items = viewModel.items
         DispatchQueue.main.async {
             self.customView?.reloadTableView()
         }
@@ -77,24 +77,6 @@ extension ExampleViewController: ExampleViewDisplayLogic {
     
     func displayExampleItemsSelection() {
         router?.routeToSelectedItem()
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension ExampleViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(
-            ExampleItemTableViewCell.self,
-            indexPath: indexPath
-        )
-        let itemCellModel = viewModel.items[indexPath.row]
-        cell.configure(with: itemCellModel)
-        return cell
     }
 }
 
