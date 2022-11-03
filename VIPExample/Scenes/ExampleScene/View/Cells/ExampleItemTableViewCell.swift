@@ -3,7 +3,7 @@ import UIKit
 final class ExampleItemTableViewCell: CodedTableViewCell, ViewModelConfigurable {
     // MARK: - Aliases
     
-    typealias ViewModel = ItemViewData
+    typealias ViewModel = ExampleScene.List.ViewModel.Item
     
     // MARK: - Properties
        
@@ -68,7 +68,7 @@ final class ExampleItemTableViewCell: CodedTableViewCell, ViewModelConfigurable 
     
     // MARK: - Configuration
     
-    func configure(with viewModel: ViewModel) {
+    func configure(with viewModel: ExampleScene.List.ViewModel.Item) {
         self.viewModel = viewModel
         _titleLabel.text = viewModel.title
         _descriptionLabel.text = viewModel.description

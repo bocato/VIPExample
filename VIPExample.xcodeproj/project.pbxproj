@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		E50DCEA2290E62AE002358D3 /* Autolayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */; };
+		E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA329103828002358D3 /* ExampleRouter.swift */; };
+		E50DCEA629104070002358D3 /* ExampleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA529104070002358D3 /* ExampleAssembler.swift */; };
+		E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEAC2910F2F9002358D3 /* ExampleView.swift */; };
+		E50DCEB12911B4A7002358D3 /* ExampleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */; };
+		E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */; };
+		E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB52911B970002358D3 /* ServiceLocator.swift */; };
+		E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB72911B9A7002358D3 /* Dependency.swift */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
 		E5668F9628FC4E3000DECA54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9428FC4E3000DECA54 /* LaunchScreen.storyboard */; };
 		E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */; };
+		E5668FBD28FC4EB900DECA54 /* ExampleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */; };
 		E5668FC028FC4EE500DECA54 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */; };
-		E5668FC228FC4F3500DECA54 /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC128FC4F3500DECA54 /* ExampleViewModel.swift */; };
+		E5668FC228FC4F3500DECA54 /* ExampleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */; };
+		E5668FC428FC4F4800DECA54 /* ExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC328FC4F4800DECA54 /* ExamplePresenter.swift */; };
+		E5668FC728FC4F8800DECA54 /* GetExampleItemsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC628FC4F8800DECA54 /* GetExampleItemsWorker.swift */; };
 		E5668FD128FC55DA00DECA54 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FCE28FC55DA00DECA54 /* ViewCode.swift */; };
 		E5668FD228FC55DA00DECA54 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FCF28FC55DA00DECA54 /* Metrics.swift */; };
 		E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FD528FC564E00DECA54 /* UITableViewExtension.swift */; };
@@ -37,6 +47,13 @@
 
 /* Begin PBXFileReference section */
 		E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Autolayout+Extensions.swift"; sourceTree = "<group>"; };
+		E50DCEA329103828002358D3 /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
+		E50DCEA529104070002358D3 /* ExampleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssembler.swift; sourceTree = "<group>"; };
+		E50DCEAC2910F2F9002358D3 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDataSource.swift; sourceTree = "<group>"; };
+		E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDelegate.swift; sourceTree = "<group>"; };
+		E50DCEB52911B970002358D3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		E50DCEB72911B9A7002358D3 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +62,11 @@
 		E5668F9728FC4E3000DECA54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5668F9C28FC4E3100DECA54 /* VIPExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPExampleTests.swift; sourceTree = "<group>"; };
+		E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModels.swift; sourceTree = "<group>"; };
 		E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
-		E5668FC128FC4F3500DECA54 /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
+		E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractor.swift; sourceTree = "<group>"; };
+		E5668FC328FC4F4800DECA54 /* ExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenter.swift; sourceTree = "<group>"; };
+		E5668FC628FC4F8800DECA54 /* GetExampleItemsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExampleItemsWorker.swift; sourceTree = "<group>"; };
 		E5668FCE28FC55DA00DECA54 /* ViewCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E5668FCF28FC55DA00DECA54 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		E5668FD528FC564E00DECA54 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -75,6 +95,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50DCEAE2910F38E002358D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5668FBE28FC4ED300DECA54 /* Cells */,
+				E50DCEAC2910F2F9002358D3 /* ExampleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E50DCEAF2911B49A002358D3 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */,
+				E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		E50DCEB42911B92B002358D3 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEB52911B970002358D3 /* ServiceLocator.swift */,
+				E50DCEB72911B9A7002358D3 /* Dependency.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 		E5668F7D28FC4E2F00DECA54 = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +165,15 @@
 		E5668FB928FC4E9300DECA54 /* ExampleScene */ = {
 			isa = PBXGroup;
 			children = (
-				E5668FBE28FC4ED300DECA54 /* Cells */,
+				E50DCEAF2911B49A002358D3 /* Adapters */,
+				E5668FC528FC4F7300DECA54 /* Workers */,
+				E50DCEAE2910F38E002358D3 /* View */,
+				E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */,
 				E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */,
-				E5668FC128FC4F3500DECA54 /* ExampleViewModel.swift */,
+				E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */,
+				E5668FC328FC4F4800DECA54 /* ExamplePresenter.swift */,
+				E50DCEA329103828002358D3 /* ExampleRouter.swift */,
+				E50DCEA529104070002358D3 /* ExampleAssembler.swift */,
 			);
 			path = ExampleScene;
 			sourceTree = "<group>";
@@ -133,9 +186,18 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		E5668FC528FC4F7300DECA54 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				E5668FC628FC4F8800DECA54 /* GetExampleItemsWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
 		E5668FC828FC54DF00DECA54 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E50DCEB42911B92B002358D3 /* DependencyInjection */,
 				E5668FD428FC564200DECA54 /* Extensions */,
 				E5668FC928FC554600DECA54 /* UI */,
 			);
@@ -298,17 +360,27 @@
 			files = (
 				E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */,
 				E5668FD128FC55DA00DECA54 /* ViewCode.swift in Sources */,
+				E50DCEB12911B4A7002358D3 /* ExampleTableViewDataSource.swift in Sources */,
+				E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */,
 				E5668FD228FC55DA00DECA54 /* Metrics.swift in Sources */,
 				E50DCEA2290E62AE002358D3 /* Autolayout+Extensions.swift in Sources */,
-				E5668FC228FC4F3500DECA54 /* ExampleViewModel.swift in Sources */,
+				E5668FC228FC4F3500DECA54 /* ExampleInteractor.swift in Sources */,
 				E5668FC028FC4EE500DECA54 /* ExampleViewController.swift in Sources */,
+				E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */,
 				E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */,
 				E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */,
 				E5668FE028FC5AE600DECA54 /* ItemEntity.swift in Sources */,
 				E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */,
 				E5668FDA28FC564E00DECA54 /* NSObject+ClassName.swift in Sources */,
 				E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */,
+				E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */,
+				E5668FC728FC4F8800DECA54 /* GetExampleItemsWorker.swift in Sources */,
 				E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */,
+				E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */,
+				E5668FC428FC4F4800DECA54 /* ExamplePresenter.swift in Sources */,
+				E50DCEA629104070002358D3 /* ExampleAssembler.swift in Sources */,
+				E5668FBD28FC4EB900DECA54 /* ExampleModels.swift in Sources */,
+				E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

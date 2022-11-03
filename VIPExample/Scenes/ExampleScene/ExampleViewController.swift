@@ -1,39 +1,38 @@
 import UIKit
 
+protocol ExampleViewDisplayLogic: AnyObject {
+    func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel)
+    func displayExampleItemsError(_ viewModel: ExampleScene.List.Error)
+    func displayExampleItemsSelection()
+}
+
 final class ExampleViewController: UIViewController {
     // MARK: - Dependencies
     
-    private let viewModel: ExampleViewModel
+    typealias Router = ExampleRoutingLogic & ExampleDataPassing
+    private let interactor: ExampleBusinessLogic
+    var router: Router?
+    private let tableViewDataSource: ExampleTableViewDataSource
+    private let tableViewDelegate: ExampleTableViewDelegate
     
-    // MARK: - UI
+    // MARK: - Properties
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .white
-        tableView.allowsSelection = true
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = .lightGray
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.estimatedSectionFooterHeight = 0
-        tableView.sectionFooterHeight = 0
-        tableView.register(
-            ExampleItemTableViewCell.self,
-            forCellReuseIdentifier: ExampleItemTableViewCell.className
-        )
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
-    
+    typealias CustomView = ExampleViewInterface
+    var customView: CustomView? {
+        get { view as? CustomView }
+        set { view = newValue }
+    }
     
     // MARK: - Initialization
     
     init(
-        viewModel: ExampleViewModel
+        interactor: ExampleBusinessLogic,
+        tableViewDataSource: ExampleTableViewDataSource,
+        tableViewDelegate: ExampleTableViewDelegate
     ) {
-        self.viewModel = viewModel
+        self.interactor = interactor
+        self.tableViewDataSource = tableViewDataSource
+        self.tableViewDelegate = tableViewDelegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,11 +45,14 @@ final class ExampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.loadExampleItemsList()
+        interactor.loadExampleItemsList(.init())
     }
     
     override func loadView() {
-        super.loadView()
+        view = ExampleView(
+            tableViewDataSource: tableViewDataSource,
+            tableViewDelegate: tableViewDelegate
+        )
         setupUI()
     }
     
@@ -59,100 +61,33 @@ final class ExampleViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Example View Controller"
-        addSubviews()
-        constrainSubviews()
+        bindTableViewActions()
     }
     
-    private func addSubviews() {
-        view.addSubview(tableView)
-    }
-    
-    private func constrainSubviews() {
-        constrainTableView()
-    }
-    
-    private func constrainTableView() {
-        tableView.layout(
-            using: [
-                tableView.topAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.topAnchor
-                ),
-                tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-                tableView.bottomAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.bottomAnchor
-                ),
-                tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
-            ]
+    private func bindTableViewActions() {
+        tableViewDelegate.actions = .init(
+            onDidSelectRowAtIndexPath: { [interactor] indexPath in
+                interactor.selectExampleItem(.init(index: indexPath.row))
+            }
         )
-    }
-    
-    // MARK: - Helpers
-    
-    private func presentAlert(_ data: AlertData) {
-        let alertController = UIAlertController(
-            title: data.title,
-            message: data.message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true)
     }
 }
 
 // MARK: - ExampleViewDisplayLogic
 
-extension ExampleViewController: ExampleViewModelDelegate {
-    func listDataDidFinishLoading() {
+extension ExampleViewController: ExampleViewDisplayLogic {
+    func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel) {
+        tableViewDataSource.items = viewModel.items
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.customView?.reloadTableView()
         }
     }
     
-    func itemsServiceErrorDidFail(_ error: ItemsServiceError) {
-        let alertData: AlertData = .init(
-            title: "Error",
-            message: "Could not load example items."
-        )
-        presentAlert(alertData)
+    func displayExampleItemsError(_ viewModel: ExampleScene.List.Error) {
+        router?.routeToErrorAlert(viewModel)
     }
     
-    func shouldPresentSelectedItem(_ item: ItemViewData) {
-        let alertData: AlertData = .init(
-            title: item.title,
-            message: item.description
-        )
-        presentAlert(alertData)
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension ExampleViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(
-            ExampleItemTableViewCell.self,
-            indexPath: indexPath
-        )
-        let itemCellModel = viewModel.items[indexPath.row]
-        cell.configure(with: itemCellModel)
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension ExampleViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        viewModel.selectExampleItemAtIndex(indexPath.row)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+    func displayExampleItemsSelection() {
+        router?.routeToSelectedItem()
     }
 }
