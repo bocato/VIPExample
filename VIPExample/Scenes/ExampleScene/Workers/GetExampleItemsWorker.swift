@@ -1,6 +1,6 @@
 import Foundation
 
-struct ExampleItem {
+struct ExampleItem: Equatable {
     let name: String
     let description: String
     let fullDescription: String
@@ -45,3 +45,24 @@ struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
         }
     }
 }
+
+//#if DEBUG
+//import XCTestDynamicOverlay
+//
+//struct GetExampleItemsWorkerFailing: GetExampleItemsWorkerProtocol {
+//    func fetchItems(
+//        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+//    ) {
+//        XCTFail("fetchItems was not implemented.")
+//    }
+//}
+//
+//final class GetExampleItemsWorkerStub: GetExampleItemsWorkerProtocol{
+//    var resultToBeReturned: Result<[ExampleItem], GetExampleItemsError> = .failure(.oops)
+//    func fetchItems(
+//        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+//    ) {
+//        completion(resultToBeReturned)
+//    }
+//}
+//#endif

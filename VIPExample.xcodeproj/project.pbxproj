@@ -15,6 +15,9 @@
 		E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */; };
 		E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB52911B970002358D3 /* ServiceLocator.swift */; };
 		E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB72911B9A7002358D3 /* Dependency.swift */; };
+		E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */; };
+		E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */; };
+		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDelegate.swift; sourceTree = "<group>"; };
 		E50DCEB52911B970002358D3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		E50DCEB72911B9A7002358D3 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractorTests.swift; sourceTree = "<group>"; };
+		E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenterTests.swift; sourceTree = "<group>"; };
+		E50DCED02914681C002358D3 /* ExampleRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouterTests.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,24 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		E50DCEC72914599E002358D3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEC8291459AC002358D3 /* ExampleScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E50DCEC8291459AC002358D3 /* ExampleScene */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */,
+				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
+				E50DCED02914681C002358D3 /* ExampleRouterTests.swift */,
+			);
+			path = ExampleScene;
+			sourceTree = "<group>";
+		};
 		E5668F7D28FC4E2F00DECA54 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +181,7 @@
 		E5668F9F28FC4E3100DECA54 /* VIPExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				E50DCEC72914599E002358D3 /* Scenes */,
 				E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */,
 			);
 			path = VIPExampleTests;
@@ -274,6 +299,8 @@
 			dependencies = (
 			);
 			name = VIPExample;
+			packageProductDependencies = (
+			);
 			productName = VIPExample;
 			productReference = E5668F8628FC4E2F00DECA54 /* VIPExample.app */;
 			productType = "com.apple.product-type.application";
@@ -324,6 +351,8 @@
 				Base,
 			);
 			mainGroup = E5668F7D28FC4E2F00DECA54;
+			packageReferences = (
+			);
 			productRefGroup = E5668F8728FC4E2F00DECA54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -389,6 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */,
+				E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */,
+				E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */,
+				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
