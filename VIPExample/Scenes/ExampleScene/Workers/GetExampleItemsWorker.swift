@@ -6,6 +6,22 @@ struct ExampleItem: Equatable {
     let fullDescription: String
 }
 
+#if DEBUG
+extension ExampleItem {
+    static func fixture(
+        name: String = "name",
+        description: String = "description",
+        fullDescription: String = "fullDescription"
+    ) -> Self {
+        .init(
+            name: name,
+            description: description,
+            fullDescription: fullDescription
+        )
+    }
+}
+#endif
+
 enum GetExampleItemsError: Error {
     case oops
 }

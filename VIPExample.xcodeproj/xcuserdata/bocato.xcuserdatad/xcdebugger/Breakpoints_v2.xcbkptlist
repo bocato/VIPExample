@@ -3,4 +3,54 @@
    uuid = "6CE3B6B6-F554-445C-8314-A47F9D591805"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DF93455-AA00-4C57-BF45-259E7298C96D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPExampleTests/Scenes/ExampleScene/ExampleRouterTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "testExample_routeToSelectedItem_whenOkIsTapped_itShouldSetSelectedToNil()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8DF93455-AA00-4C57-BF45-259E7298C96D - 1d727bff281921a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VIPExampleTests.ExampleRouterTests.testExample_routeToSelectedItem_whenOkIsTapped_itShouldSetSelectedToNil() throws -&gt; ()"
+                  moduleName = "VIPExampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bocato/development/ios_current/VIPExample/VIPExampleTests/Scenes/ExampleScene/ExampleRouterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1536">
+               </Location>
+               <Location
+                  uuid = "8DF93455-AA00-4C57-BF45-259E7298C96D - 1d727bff28192187"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VIPExampleTests.ExampleRouterTests.testExample_routeToSelectedItem_whenOkIsTapped_itShouldSetSelectedToNil() throws -&gt; ()"
+                  moduleName = "VIPExampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bocato/development/ios_current/VIPExample/VIPExampleTests/Scenes/ExampleScene/ExampleRouterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

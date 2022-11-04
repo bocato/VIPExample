@@ -37,6 +37,7 @@
 		E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE128FC5B6B00DECA54 /* ExampleItemTableViewCell.swift */; };
 		E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE528FC5D6900DECA54 /* ItemsService.swift */; };
 		E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */; };
+		E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		E5668FE128FC5B6B00DECA54 /* ExampleItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleItemTableViewCell.swift; sourceTree = "<group>"; };
 		E5668FE528FC5D6900DECA54 /* ItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
+		E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssemblerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */,
 				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
 				E50DCED02914681C002358D3 /* ExampleRouterTests.swift */,
+				E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */,
 			);
 			path = ExampleScene;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */,
 				E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */,
 				E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */,
+				E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */,
 				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
