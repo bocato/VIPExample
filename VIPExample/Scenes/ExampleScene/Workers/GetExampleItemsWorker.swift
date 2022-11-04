@@ -46,23 +46,23 @@ struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
     }
 }
 
-//#if DEBUG
-//import XCTestDynamicOverlay
-//
-//struct GetExampleItemsWorkerFailing: GetExampleItemsWorkerProtocol {
-//    func fetchItems(
-//        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
-//    ) {
-//        XCTFail("fetchItems was not implemented.")
-//    }
-//}
-//
-//final class GetExampleItemsWorkerStub: GetExampleItemsWorkerProtocol{
-//    var resultToBeReturned: Result<[ExampleItem], GetExampleItemsError> = .failure(.oops)
-//    func fetchItems(
-//        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
-//    ) {
-//        completion(resultToBeReturned)
-//    }
-//}
-//#endif
+#if DEBUG
+import XCTestDynamicOverlay
+
+struct GetExampleItemsWorkerFailing: GetExampleItemsWorkerProtocol {
+    func fetchItems(
+        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+    ) {
+        XCTFail("fetchItems was not implemented.")
+    }
+}
+
+final class GetExampleItemsWorkerStub: GetExampleItemsWorkerProtocol{
+    var resultToBeReturned: Result<[ExampleItem], GetExampleItemsError> = .failure(.oops)
+    func fetchItems(
+        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+    ) {
+        completion(resultToBeReturned)
+    }
+}
+#endif

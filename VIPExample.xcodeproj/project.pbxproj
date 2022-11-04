@@ -18,6 +18,7 @@
 		E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */; };
 		E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */; };
 		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
+		E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +302,7 @@
 			);
 			name = VIPExample;
 			packageProductDependencies = (
+				E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */,
 			);
 			productName = VIPExample;
 			productReference = E5668F8628FC4E2F00DECA54 /* VIPExample.app */;
@@ -352,6 +355,7 @@
 			);
 			mainGroup = E5668F7D28FC4E2F00DECA54;
 			packageReferences = (
+				E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */,
 			);
 			productRefGroup = E5668F8728FC4E2F00DECA54 /* Products */;
 			projectDirPath = "";
@@ -689,6 +693,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/xctest-dynamic-overlay.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */;
+			productName = XCTestDynamicOverlay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5668F7E28FC4E2F00DECA54 /* Project object */;
 }
