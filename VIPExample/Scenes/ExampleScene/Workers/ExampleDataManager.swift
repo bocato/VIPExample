@@ -22,17 +22,17 @@ extension ExampleItem {
 }
 #endif
 
-enum GetExampleItemsError: Error {
+enum ExampleDataManagerError: Error {
     case oops
 }
 
-protocol GetExampleItemsWorkerProtocol {
+protocol ExampleDataManagerProtocol {
     func fetchItems(
-        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+        then completion: @escaping (Result<[ExampleItem], ExampleDataManagerError>) -> Void
     )
 }
 
-struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
+struct ExampleDataManager: ExampleDataManagerProtocol {
     private let itemsService: ItemsServiceProtocol
     
     init(itemsService: ItemsServiceProtocol) {
@@ -40,7 +40,7 @@ struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
     }
     
     func fetchItems(
-        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+        then completion: @escaping (Result<[ExampleItem], ExampleDataManagerError>) -> Void
     ) {
         itemsService.getItems { result in
             do {
@@ -61,24 +61,3 @@ struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
         }
     }
 }
-
-#if DEBUG
-import XCTestDynamicOverlay
-
-struct GetExampleItemsWorkerFailing: GetExampleItemsWorkerProtocol {
-    func fetchItems(
-        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
-    ) {
-        XCTFail("fetchItems was not implemented.")
-    }
-}
-
-final class GetExampleItemsWorkerStub: GetExampleItemsWorkerProtocol{
-    var resultToBeReturned: Result<[ExampleItem], GetExampleItemsError> = .failure(.oops)
-    func fetchItems(
-        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
-    ) {
-        completion(resultToBeReturned)
-    }
-}
-#endif

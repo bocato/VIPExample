@@ -9,26 +9,22 @@
 /* Begin PBXBuildFile section */
 		E50DCEA2290E62AE002358D3 /* Autolayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */; };
 		E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA329103828002358D3 /* ExampleRouter.swift */; };
-		E50DCEA629104070002358D3 /* ExampleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA529104070002358D3 /* ExampleAssembler.swift */; };
 		E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEAC2910F2F9002358D3 /* ExampleView.swift */; };
 		E50DCEB12911B4A7002358D3 /* ExampleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */; };
 		E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */; };
 		E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB52911B970002358D3 /* ServiceLocator.swift */; };
 		E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB72911B9A7002358D3 /* Dependency.swift */; };
-		E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */; };
-		E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */; };
-		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
 		E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
 		E5668F9628FC4E3000DECA54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9428FC4E3000DECA54 /* LaunchScreen.storyboard */; };
 		E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */; };
-		E5668FBD28FC4EB900DECA54 /* ExampleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */; };
+		E5668FBD28FC4EB900DECA54 /* ExampleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FBC28FC4EB900DECA54 /* ExampleProtocols.swift */; };
 		E5668FC028FC4EE500DECA54 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */; };
 		E5668FC228FC4F3500DECA54 /* ExampleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */; };
 		E5668FC428FC4F4800DECA54 /* ExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC328FC4F4800DECA54 /* ExamplePresenter.swift */; };
-		E5668FC728FC4F8800DECA54 /* GetExampleItemsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC628FC4F8800DECA54 /* GetExampleItemsWorker.swift */; };
+		E5668FC728FC4F8800DECA54 /* ExampleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FC628FC4F8800DECA54 /* ExampleDataManager.swift */; };
 		E5668FD128FC55DA00DECA54 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FCE28FC55DA00DECA54 /* ViewCode.swift */; };
 		E5668FD228FC55DA00DECA54 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FCF28FC55DA00DECA54 /* Metrics.swift */; };
 		E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FD528FC564E00DECA54 /* UITableViewExtension.swift */; };
@@ -37,7 +33,6 @@
 		E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE128FC5B6B00DECA54 /* ExampleItemTableViewCell.swift */; };
 		E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE528FC5D6900DECA54 /* ItemsService.swift */; };
 		E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */; };
-		E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */; };
 		E573DF2F2917E9560065C7E0 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,15 +49,11 @@
 /* Begin PBXFileReference section */
 		E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Autolayout+Extensions.swift"; sourceTree = "<group>"; };
 		E50DCEA329103828002358D3 /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
-		E50DCEA529104070002358D3 /* ExampleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssembler.swift; sourceTree = "<group>"; };
 		E50DCEAC2910F2F9002358D3 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		E50DCEB02911B4A7002358D3 /* ExampleTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDataSource.swift; sourceTree = "<group>"; };
 		E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDelegate.swift; sourceTree = "<group>"; };
 		E50DCEB52911B970002358D3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		E50DCEB72911B9A7002358D3 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
-		E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractorTests.swift; sourceTree = "<group>"; };
-		E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenterTests.swift; sourceTree = "<group>"; };
-		E50DCED02914681C002358D3 /* ExampleRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouterTests.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,11 +62,11 @@
 		E5668F9728FC4E3000DECA54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5668F9C28FC4E3100DECA54 /* VIPExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPExampleTests.swift; sourceTree = "<group>"; };
-		E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModels.swift; sourceTree = "<group>"; };
+		E5668FBC28FC4EB900DECA54 /* ExampleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProtocols.swift; sourceTree = "<group>"; };
 		E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractor.swift; sourceTree = "<group>"; };
 		E5668FC328FC4F4800DECA54 /* ExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenter.swift; sourceTree = "<group>"; };
-		E5668FC628FC4F8800DECA54 /* GetExampleItemsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExampleItemsWorker.swift; sourceTree = "<group>"; };
+		E5668FC628FC4F8800DECA54 /* ExampleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataManager.swift; sourceTree = "<group>"; };
 		E5668FCE28FC55DA00DECA54 /* ViewCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E5668FCF28FC55DA00DECA54 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		E5668FD528FC564E00DECA54 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -84,7 +75,6 @@
 		E5668FE128FC5B6B00DECA54 /* ExampleItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleItemTableViewCell.swift; sourceTree = "<group>"; };
 		E5668FE528FC5D6900DECA54 /* ItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
-		E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssemblerTest.swift; sourceTree = "<group>"; };
 		E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,25 +124,6 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
-		E50DCEC72914599E002358D3 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				E50DCEC8291459AC002358D3 /* ExampleScene */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		E50DCEC8291459AC002358D3 /* ExampleScene */ = {
-			isa = PBXGroup;
-			children = (
-				E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */,
-				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
-				E50DCED02914681C002358D3 /* ExampleRouterTests.swift */,
-				E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */,
-			);
-			path = ExampleScene;
-			sourceTree = "<group>";
-		};
 		E5668F7D28FC4E2F00DECA54 = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +159,6 @@
 		E5668F9F28FC4E3100DECA54 /* VIPExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				E50DCEC72914599E002358D3 /* Scenes */,
 				E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */,
 			);
 			path = VIPExampleTests;
@@ -200,12 +170,11 @@
 				E50DCEAF2911B49A002358D3 /* Adapters */,
 				E5668FC528FC4F7300DECA54 /* Workers */,
 				E50DCEAE2910F38E002358D3 /* View */,
-				E5668FBC28FC4EB900DECA54 /* ExampleModels.swift */,
+				E5668FBC28FC4EB900DECA54 /* ExampleProtocols.swift */,
 				E5668FBF28FC4EE500DECA54 /* ExampleViewController.swift */,
 				E5668FC128FC4F3500DECA54 /* ExampleInteractor.swift */,
 				E5668FC328FC4F4800DECA54 /* ExamplePresenter.swift */,
 				E50DCEA329103828002358D3 /* ExampleRouter.swift */,
-				E50DCEA529104070002358D3 /* ExampleAssembler.swift */,
 			);
 			path = ExampleScene;
 			sourceTree = "<group>";
@@ -221,7 +190,7 @@
 		E5668FC528FC4F7300DECA54 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				E5668FC628FC4F8800DECA54 /* GetExampleItemsWorker.swift */,
+				E5668FC628FC4F8800DECA54 /* ExampleDataManager.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -414,12 +383,11 @@
 				E5668FDA28FC564E00DECA54 /* NSObject+ClassName.swift in Sources */,
 				E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */,
 				E50DCEAD2910F2F9002358D3 /* ExampleView.swift in Sources */,
-				E5668FC728FC4F8800DECA54 /* GetExampleItemsWorker.swift in Sources */,
+				E5668FC728FC4F8800DECA54 /* ExampleDataManager.swift in Sources */,
 				E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */,
 				E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */,
 				E5668FC428FC4F4800DECA54 /* ExamplePresenter.swift in Sources */,
-				E50DCEA629104070002358D3 /* ExampleAssembler.swift in Sources */,
-				E5668FBD28FC4EB900DECA54 /* ExampleModels.swift in Sources */,
+				E5668FBD28FC4EB900DECA54 /* ExampleProtocols.swift in Sources */,
 				E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,10 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */,
-				E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */,
-				E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */,
-				E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */,
-				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

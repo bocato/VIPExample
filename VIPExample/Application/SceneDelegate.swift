@@ -30,7 +30,8 @@ extension SceneDelegate {
     }
     
     private func getRootViewController() -> UIViewController {
-        let exampleAssembler: ExampleAssembler = .init()
-        return exampleAssembler.makeViewController()
+        return ExampleRouter.makeExampleModule(
+            dependencyResolver: serviceLocator
+        )
     }
 }

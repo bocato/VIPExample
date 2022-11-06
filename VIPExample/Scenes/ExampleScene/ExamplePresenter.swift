@@ -1,39 +1,48 @@
 import UIKit
 
-protocol ExamplePresentationLogic {
-    func presentExampleItemsList(_ response: ExampleScene.List.Response)
-    func presentExampleItemsListError(_ response: ExampleScene.Error)
-    func presentExampleItemsSelection(_ response: ExampleScene.Selection.Response)
-}
-
-final class ExamplePresenter: ExamplePresentationLogic {
-    // MARK: - Private Properties
+final class ExamplePresenter: ExamplePresenterProtocol, ExampleInteractorOutputProtocol {
+    // MARK: - Dependencies
     
-    weak var viewController: ExampleViewDisplayLogic?
+    weak var viewController: ExampleViewControllerProtocol?
+    var interactor: ExampleInteractorInputProtocol?
+    var router: ExampleRouterProtocol?
     
-    // MARK: - ExamplePresentationLogic
+    // MARK: - ExamplePresenterProtocol
     
-    func presentExampleItemsList(_ response: ExampleScene.List.Response) {
-        let presentedItems = response.items.map {
-            ExampleScene.List.ViewModel.Item(
+    func viewDidLoad() {
+        interactor?.loadExampleItemsList()
+    }
+    
+    func selectExampleItemAtIndex(_ index: Int) {
+        interactor?.selectExampleItemAtIndex(index)
+    }
+    
+    // MARK: - ExampleInteractorOutputProtocol
+    
+    func presentExampleItemsList(_ items: [ExampleItem]) {
+        let listItems: [ListItem] = items.map {
+            .init(
                 title: $0.name.capitalized,
                 description: $0.fullDescription
             )
         }
-        let viewModel = ExampleScene.List.ViewModel(items: presentedItems)
-        viewController?.displayExampleItems(viewModel)
+        viewController?.displayExampleItems(listItems)
     }
     
-    func presentExampleItemsListError(_ response: ExampleScene.Error) {
-        let errorModel = ExampleScene.List.Error(
+    func presentExampleItemsListError(_ error: Error) {
+        let alertData: AlertData = .init(
             title: "Error",
             message: "Could not load example items."
         )
-        viewController?.displayExampleItemsError(errorModel)
+        router?.routeToErrorAlert(alertData)
     }
     
-    func presentExampleItemsSelection(_ response: ExampleScene.Selection.Response) {
-        viewController?.displayExampleItemsSelection()
+    func presentSelectedItem(_ item: ExampleItem) {
+        router?.routeToSelectedItem(
+            item,
+            onDismiss: { [interactor] in
+                interactor?.deselectExampleItem(item)
+            }
+        )
     }
-    
 }
