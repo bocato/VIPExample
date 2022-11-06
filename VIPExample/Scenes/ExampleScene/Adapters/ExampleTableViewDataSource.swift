@@ -3,7 +3,7 @@ import UIKit
 final class ExampleTableViewDataSource: NSObject, UITableViewDataSource {
     // MARK: - Properties
     
-    typealias Item = ExampleScene.List.ViewModel.Item
+    typealias Item = ListItem
     var items: [Item] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

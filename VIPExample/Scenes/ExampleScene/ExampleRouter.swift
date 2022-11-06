@@ -1,28 +1,16 @@
 import Foundation
 import UIKit
 
-protocol ExampleRoutingLogic: AnyObject {
-    func routeToErrorAlert(_ data: ExampleScene.AlertData)
-    func routeToSelectedItem()
-}
-
-protocol ExampleDataPassing: AnyObject {
-    var dataStore: ExampleDataStore? { get set }
-}
-
-final class ExampleRouter: ExampleRoutingLogic, ExampleDataPassing {
+final class ExampleRouter: ExampleRouterProtocol {
+    
     // MARK: - Dependencies
     
     typealias ViewController = UIViewController
     private weak var viewController: ViewController!
     private let makeAlertBuilder: () -> AlertBuilding
     
-    // MARK: - Properties
-    
-    var dataStore: ExampleDataStore?
-    
     // MARK: - Initialization
-    
+
     init(
         viewController: ViewController,
         makeAlertBuilder: @escaping () -> AlertBuilding = AlertBuilder.init
@@ -30,33 +18,30 @@ final class ExampleRouter: ExampleRoutingLogic, ExampleDataPassing {
         self.viewController = viewController
         self.makeAlertBuilder = makeAlertBuilder
     }
-    
+
     // MARK: - ExampleRoutingLogic
-    
-    func routeToErrorAlert(_ data: ExampleScene.AlertData) {
+
+    func routeToErrorAlert(_ data: AlertData) {
         let alertController = makeOKAlert(with: data)
         viewController.present(alertController, animated: true)
     }
     
-    func routeToSelectedItem() {
-        guard let selectedItem = dataStore?.selectedItem else { return }
-        let data: ExampleScene.AlertData = .init(
-            title: selectedItem.name,
-            message: selectedItem.fullDescription
+    func routeToSelectedItem(_ item: ExampleItem, onDismiss: @escaping () -> Void) {
+        let alertData: AlertData = .init(
+            title: item.name,
+            message: item.fullDescription
         )
         let alertController = makeOKAlert(
-            with: data,
-            okActionHandler: { [weak self] in
-                self?.dataStore?.selectedItem = nil
-            }
+            with: alertData,
+            okActionHandler: onDismiss
         )
         viewController.present(alertController, animated: true)
     }
-    
+
     // MARK: - Helpers
-    
+
     private func makeOKAlert(
-        with data: ExampleScene.AlertData,
+        with data: AlertData,
         okActionHandler: (() -> Void)? = nil
     ) -> UIAlertController {
         let okAction: AlertAction = .init(
@@ -71,5 +56,43 @@ final class ExampleRouter: ExampleRoutingLogic, ExampleDataPassing {
             .setStyle(.alert)
             .addAction(okAction)
             .build()
+    }
+    
+    static func makeExampleModule(
+        dependencyResolver: Resolver
+    ) -> UIViewController {
+        
+        typealias Presenter = ExamplePresenterProtocol & ExampleInteractorOutputProtocol
+        let presenter: Presenter = ExamplePresenter()
+        
+        let itemsService = dependencyResolver.resolve(ItemsServiceProtocol.self)!
+        let dataManager: ExampleDataManager = .init(
+            itemsService: itemsService
+        )
+        let interactor: ExampleInteractorInputProtocol =  ExampleInteractor(
+            dataManager: dataManager
+        )
+        
+        let tableViewDataSource: ExampleTableViewDataSource = .init()
+        let tableViewDelegate: ExampleTableViewDelegate = .init()
+        let viewController: ExampleViewController = .init(
+            tableViewDataSource: tableViewDataSource,
+            tableViewDelegate: tableViewDelegate
+        )
+        
+        let router: ExampleRouter = .init(
+            viewController: viewController
+        )
+        
+        // Connecting the components
+        viewController.presenter = presenter
+        presenter.viewController = viewController
+        presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        
+        return UINavigationController(
+            rootViewController: viewController
+        )
     }
 }

@@ -1,17 +1,10 @@
 import UIKit
 
-protocol ExampleViewDisplayLogic: AnyObject {
-    func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel)
-    func displayExampleItemsError(_ viewModel: ExampleScene.List.Error)
-    func displayExampleItemsSelection()
-}
-
-final class ExampleViewController: UIViewController {
+final class ExampleViewController: UIViewController, ExampleViewControllerProtocol {
+    
     // MARK: - Dependencies
     
-    typealias Router = ExampleRoutingLogic & ExampleDataPassing
-    private let interactor: ExampleBusinessLogic
-    var router: Router?
+    var presenter: ExamplePresenterProtocol?
     private let tableViewDataSource: ExampleTableViewDataSource
     private let tableViewDelegate: ExampleTableViewDelegate
     
@@ -26,11 +19,9 @@ final class ExampleViewController: UIViewController {
     // MARK: - Initialization
     
     init(
-        interactor: ExampleBusinessLogic,
         tableViewDataSource: ExampleTableViewDataSource,
         tableViewDelegate: ExampleTableViewDelegate
     ) {
-        self.interactor = interactor
         self.tableViewDataSource = tableViewDataSource
         self.tableViewDelegate = tableViewDelegate
         super.init(nibName: nil, bundle: nil)
@@ -45,7 +36,7 @@ final class ExampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.loadExampleItemsList(.init())
+        presenter?.viewDidLoad()
     }
     
     override func loadView() {
@@ -66,28 +57,20 @@ final class ExampleViewController: UIViewController {
     
     private func bindTableViewActions() {
         tableViewDelegate.actions = .init(
-            onDidSelectRowAtIndexPath: { [interactor] indexPath in
-                interactor.selectExampleItem(.init(index: indexPath.row))
+            onDidSelectRowAtIndexPath: { [presenter] indexPath in
+                presenter?.selectExampleItemAtIndex(indexPath.row)
             }
         )
     }
 }
 
-// MARK: - ExampleViewDisplayLogic
+// MARK: - ExampleViewControllerProtocol
 
-extension ExampleViewController: ExampleViewDisplayLogic {
-    func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel) {
-        tableViewDataSource.items = viewModel.items
+extension ExampleViewController {
+    func displayExampleItems(_ items: [ListItem]) {
+        tableViewDataSource.items = items
         DispatchQueue.main.async {
             self.customView?.reloadTableView()
         }
-    }
-    
-    func displayExampleItemsError(_ viewModel: ExampleScene.List.Error) {
-        router?.routeToErrorAlert(viewModel)
-    }
-    
-    func displayExampleItemsSelection() {
-        router?.routeToSelectedItem()
     }
 }
