@@ -4,9 +4,14 @@ import XCTest
 final class ExampleRouterTests: XCTestCase {
     // MARK: - Properties and Doubles
     private lazy var viewControllerSpy: ViewControllerSpy = .init()
-    private lazy var sut: ExampleRouter = .init(
-        viewController: viewControllerSpy
-    )
+    private lazy var alertBuilderMock: AlertBuilderMock = .init()
+    private lazy var sut: ExampleRouter = {
+        let alertBuilder = alertBuilderMock
+        return .init(
+            viewController: viewControllerSpy,
+            makeAlertBuilder: { alertBuilder }
+        )
+    }()
     
     // MARK: - Tests
     func testExample_routeToErrorAlert_showsAlert() throws {
@@ -34,15 +39,13 @@ final class ExampleRouterTests: XCTestCase {
             name: "Important Name",
             fullDescription: "Very large description"
         )
-        
+
         sut.routeToSelectedItem()
-        
-        let alert = try XCTUnwrap(viewControllerSpy.viewControllerToPresentPassed as? UIAlertController)
-        let action = try XCTUnwrap(alert.actions.first)
+        XCTAssertNotNil(sut.dataStore?.selectedItem)
         
         // When
-//        as? ((UIAlertAction) -> Void)?
-        print(action)
+        let alertHandler = alertBuilderMock.actionsPassed.last?.handler
+        alertHandler?()
 
         // Then
         XCTAssertNil(sut.dataStore?.selectedItem)

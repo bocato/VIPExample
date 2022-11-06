@@ -38,6 +38,7 @@
 		E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE528FC5D6900DECA54 /* ItemsService.swift */; };
 		E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */; };
 		E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */; };
+		E573DF2F2917E9560065C7E0 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		E5668FE528FC5D6900DECA54 /* ItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
 		E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssemblerTest.swift; sourceTree = "<group>"; };
+		E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */,
 				E5668FCF28FC55DA00DECA54 /* Metrics.swift */,
 				E5668FCE28FC55DA00DECA54 /* ViewCode.swift */,
+				E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */,
 				E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */,
 				E5668FE028FC5AE600DECA54 /* ItemEntity.swift in Sources */,
+				E573DF2F2917E9560065C7E0 /* AlertBuilder.swift in Sources */,
 				E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */,
 				E5668FDA28FC564E00DECA54 /* NSObject+ClassName.swift in Sources */,
 				E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */,
