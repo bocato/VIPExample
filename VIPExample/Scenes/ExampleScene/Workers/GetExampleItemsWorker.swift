@@ -63,14 +63,13 @@ struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
 }
 
 #if DEBUG
-//import XCTestDynamicOverlay
+import XCTestDynamicOverlay
 
 struct GetExampleItemsWorkerFailing: GetExampleItemsWorkerProtocol {
     func fetchItems(
         then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
     ) {
-        fatalError()
-//        XCTFail("fetchItems was not implemented.")
+        XCTFail("fetchItems was not implemented.")
     }
 }
 
