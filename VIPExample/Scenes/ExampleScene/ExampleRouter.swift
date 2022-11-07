@@ -15,6 +15,7 @@ final class ExampleRouter: ExampleRoutingLogic, ExampleDataPassing {
     
     typealias ViewController = UIViewController
     private weak var viewController: ViewController!
+    private let makeAlertBuilder: () -> AlertBuilding
     
     // MARK: - Properties
     
@@ -22,24 +23,18 @@ final class ExampleRouter: ExampleRoutingLogic, ExampleDataPassing {
     
     // MARK: - Initialization
     
-    init(viewController: ViewController) {
+    init(
+        viewController: ViewController,
+        makeAlertBuilder: @escaping () -> AlertBuilding = AlertBuilder.init
+    ) {
         self.viewController = viewController
+        self.makeAlertBuilder = makeAlertBuilder
     }
     
     // MARK: - ExampleRoutingLogic
     
     func routeToErrorAlert(_ data: ExampleScene.AlertData) {
-        let alertController = UIAlertController(
-            title: data.title,
-            message: data.message,
-            preferredStyle: .alert
-        )
-        let okAction: UIAlertAction = .init(
-            title: "OK",
-            style: .default,
-            handler: nil
-        )
-        alertController.addAction(okAction)
+        let alertController = makeOKAlert(with: data)
         viewController.present(alertController, animated: true)
     }
     
@@ -49,19 +44,32 @@ final class ExampleRouter: ExampleRoutingLogic, ExampleDataPassing {
             title: selectedItem.name,
             message: selectedItem.fullDescription
         )
-        let alertController = UIAlertController(
-            title: data.title,
-            message: data.message,
-            preferredStyle: .alert
-        )
-        let okAction: UIAlertAction = .init(
-            title: "OK",
-            style: .default,
-            handler: { [weak self] _ in
+        let alertController = makeOKAlert(
+            with: data,
+            okActionHandler: { [weak self] in
                 self?.dataStore?.selectedItem = nil
             }
         )
-        alertController.addAction(okAction)
         viewController.present(alertController, animated: true)
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeOKAlert(
+        with data: ExampleScene.AlertData,
+        okActionHandler: (() -> Void)? = nil
+    ) -> UIAlertController {
+        let okAction: AlertAction = .init(
+            title: "OK",
+            style: .default,
+            handler: okActionHandler
+        )
+        let builder = makeAlertBuilder()
+        return builder
+            .setTitle(data.title)
+            .setMessage(data.message)
+            .setStyle(.alert)
+            .addAction(okAction)
+            .build()
     }
 }

@@ -1,10 +1,26 @@
 import Foundation
 
-struct ExampleItem {
+struct ExampleItem: Equatable {
     let name: String
     let description: String
     let fullDescription: String
 }
+
+#if DEBUG
+extension ExampleItem {
+    static func fixture(
+        name: String = "name",
+        description: String = "description",
+        fullDescription: String = "fullDescription"
+    ) -> Self {
+        .init(
+            name: name,
+            description: description,
+            fullDescription: fullDescription
+        )
+    }
+}
+#endif
 
 enum GetExampleItemsError: Error {
     case oops
@@ -45,3 +61,24 @@ struct GetExampleItemsWorker: GetExampleItemsWorkerProtocol {
         }
     }
 }
+
+#if DEBUG
+import XCTestDynamicOverlay
+
+struct GetExampleItemsWorkerFailing: GetExampleItemsWorkerProtocol {
+    func fetchItems(
+        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+    ) {
+        XCTFail("fetchItems was not implemented.")
+    }
+}
+
+final class GetExampleItemsWorkerStub: GetExampleItemsWorkerProtocol{
+    var resultToBeReturned: Result<[ExampleItem], GetExampleItemsError> = .failure(.oops)
+    func fetchItems(
+        then completion: @escaping (Result<[ExampleItem], GetExampleItemsError>) -> Void
+    ) {
+        completion(resultToBeReturned)
+    }
+}
+#endif

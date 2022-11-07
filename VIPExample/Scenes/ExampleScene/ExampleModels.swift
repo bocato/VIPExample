@@ -29,7 +29,7 @@ enum ExampleScene {
     
     typealias Error = Swift.Error
     
-    struct AlertData {
+    struct AlertData: Equatable {
         let title: String
         let message: String
     }

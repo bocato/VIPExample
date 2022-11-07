@@ -49,3 +49,17 @@ public final class Dependency<T> {
         resolvedValue = instanceFromContainer
     }
 }
+
+#if DEBUG
+extension Dependency {
+    static func resolved(
+        _ value: T
+    ) -> Self {
+        .init(
+            resolvedValue: value,
+            resolver: nil,
+            failureHandler: { _ in }
+        )
+    }
+}
+#endif

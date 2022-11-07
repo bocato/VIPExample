@@ -15,6 +15,10 @@
 		E50DCEB32911B792002358D3 /* ExampleTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */; };
 		E50DCEB62911B970002358D3 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB52911B970002358D3 /* ServiceLocator.swift */; };
 		E50DCEB82911B9A7002358D3 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEB72911B9A7002358D3 /* Dependency.swift */; };
+		E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */; };
+		E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */; };
+		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
+		E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -33,6 +37,8 @@
 		E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE128FC5B6B00DECA54 /* ExampleItemTableViewCell.swift */; };
 		E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE528FC5D6900DECA54 /* ItemsService.swift */; };
 		E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */; };
+		E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */; };
+		E573DF2F2917E9560065C7E0 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,9 @@
 		E50DCEB22911B792002358D3 /* ExampleTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewDelegate.swift; sourceTree = "<group>"; };
 		E50DCEB52911B970002358D3 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		E50DCEB72911B9A7002358D3 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractorTests.swift; sourceTree = "<group>"; };
+		E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenterTests.swift; sourceTree = "<group>"; };
+		E50DCED02914681C002358D3 /* ExampleRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouterTests.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +84,8 @@
 		E5668FE128FC5B6B00DECA54 /* ExampleItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleItemTableViewCell.swift; sourceTree = "<group>"; };
 		E5668FE528FC5D6900DECA54 /* ItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
+		E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssemblerTest.swift; sourceTree = "<group>"; };
+		E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +134,25 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		E50DCEC72914599E002358D3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEC8291459AC002358D3 /* ExampleScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E50DCEC8291459AC002358D3 /* ExampleScene */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */,
+				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
+				E50DCED02914681C002358D3 /* ExampleRouterTests.swift */,
+				E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */,
+			);
+			path = ExampleScene;
+			sourceTree = "<group>";
+		};
 		E5668F7D28FC4E2F00DECA54 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +188,7 @@
 		E5668F9F28FC4E3100DECA54 /* VIPExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				E50DCEC72914599E002358D3 /* Scenes */,
 				E5668FA028FC4E3100DECA54 /* VIPExampleTests.swift */,
 			);
 			path = VIPExampleTests;
@@ -210,6 +242,7 @@
 				E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */,
 				E5668FCF28FC55DA00DECA54 /* Metrics.swift */,
 				E5668FCE28FC55DA00DECA54 /* ViewCode.swift */,
+				E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -274,6 +307,9 @@
 			dependencies = (
 			);
 			name = VIPExample;
+			packageProductDependencies = (
+				E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */,
+			);
 			productName = VIPExample;
 			productReference = E5668F8628FC4E2F00DECA54 /* VIPExample.app */;
 			productType = "com.apple.product-type.application";
@@ -324,6 +360,9 @@
 				Base,
 			);
 			mainGroup = E5668F7D28FC4E2F00DECA54;
+			packageReferences = (
+				E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */,
+			);
 			productRefGroup = E5668F8728FC4E2F00DECA54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +409,7 @@
 				E5668FE628FC5D6900DECA54 /* ItemsService.swift in Sources */,
 				E5668FE328FC5B6B00DECA54 /* ExampleItemTableViewCell.swift in Sources */,
 				E5668FE028FC5AE600DECA54 /* ItemEntity.swift in Sources */,
+				E573DF2F2917E9560065C7E0 /* AlertBuilder.swift in Sources */,
 				E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */,
 				E5668FDA28FC564E00DECA54 /* NSObject+ClassName.swift in Sources */,
 				E5668FD828FC564E00DECA54 /* UITableViewExtension.swift in Sources */,
@@ -389,6 +429,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */,
+				E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */,
+				E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */,
+				E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */,
+				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +701,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/xctest-dynamic-overlay.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */;
+			productName = XCTestDynamicOverlay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5668F7E28FC4E2F00DECA54 /* Project object */;
 }
