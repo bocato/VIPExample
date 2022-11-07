@@ -69,7 +69,7 @@ final class ExampleRouter: ExampleRouterProtocol {
         let dataManager: ExampleDataManager = .init(
             itemsService: itemsService
         )
-        let interactor: ExampleInteractorInputProtocol =  ExampleInteractor(
+        let interactor: ExampleInteractorInputProtocol = ExampleInteractor(
             dataManager: dataManager
         )
         

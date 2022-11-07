@@ -3,9 +3,9 @@ import UIKit
 final class ExamplePresenter: ExamplePresenterProtocol, ExampleInteractorOutputProtocol {
     // MARK: - Dependencies
     
-    weak var viewController: ExampleViewControllerProtocol?
-    var interactor: ExampleInteractorInputProtocol?
-    var router: ExampleRouterProtocol?
+    weak var viewController: ExampleViewControllerProtocol? // DisplayLogic
+    var interactor: ExampleInteractorInputProtocol? // BusinessLogic
+    var router: ExampleRouterProtocol? // RoutingLogic
     
     // MARK: - ExamplePresenterProtocol
     

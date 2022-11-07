@@ -9,7 +9,7 @@ final class ExampleInteractor: ExampleInteractorInputProtocol {
     // MARK: - Dependencies
     
     private let dataManager: ExampleDataManagerProtocol
-    var presenter: ExampleInteractorOutputProtocol?
+    weak var presenter: ExampleInteractorOutputProtocol?
     
     // MARK: - Private Properties
     
