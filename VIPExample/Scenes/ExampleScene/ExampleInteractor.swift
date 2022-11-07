@@ -57,19 +57,22 @@ final class ExampleInteractor: ExampleBusinessLogic, ExampleDataStore {
 }
 
 #if DEBUG
-import XCTestDynamicOverlay
+//import XCTestDynamicOverlay
 
 struct ExamplePresentationFailing: ExamplePresentationLogic {
     func presentExampleItemsList(_ response: ExampleScene.List.Response) {
-        XCTFail("presentExampleItemsList was not implemented.")
+        fatalError()
+//        XCTFail("presentExampleItemsList was not implemented.")
     }
     
     func presentExampleItemsListError(_ response: ExampleScene.Error) {
-        XCTFail("presentExampleItemsListError was not implemented.")
+        fatalError()
+//        XCTFail("presentExampleItemsListError was not implemented.")
     }
     
     func presentExampleItemsSelection(_ response: ExampleScene.Selection.Response) {
-        XCTFail("presentExampleItemsSelection was not implemented.")
+        fatalError()
+//        XCTFail("presentExampleItemsSelection was not implemented.")
     }
 }
 
@@ -82,11 +85,13 @@ final class ExamplePresentationSpy: ExamplePresentationLogic {
     }
 
     func presentExampleItemsListError(_ response: ExampleScene.Error) {
-        XCTFail("presentExampleItemsListError was not implemented.")
+        fatalError()
+//        XCTFail("presentExampleItemsListError was not implemented.")
     }
 
     func presentExampleItemsSelection(_ response: ExampleScene.Selection.Response) {
-        XCTFail("presentExampleItemsSelection was not implemented.")
+        fatalError()
+//        XCTFail("presentExampleItemsSelection was not implemented.")
     }
 }
 #endif

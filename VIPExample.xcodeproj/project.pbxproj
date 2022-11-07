@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E504F33C2919A511000196EB /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E504F33B2919A511000196EB /* SnapshotTesting */; };
 		E50DCEA2290E62AE002358D3 /* Autolayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA1290E62AE002358D3 /* Autolayout+Extensions.swift */; };
 		E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA329103828002358D3 /* ExampleRouter.swift */; };
 		E50DCEA629104070002358D3 /* ExampleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEA529104070002358D3 /* ExampleAssembler.swift */; };
@@ -18,7 +19,6 @@
 		E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */; };
 		E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */; };
 		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
-		E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -39,6 +39,7 @@
 		E5668FE828FC5EE700DECA54 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */; };
 		E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */; };
 		E573DF2F2917E9560065C7E0 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */; };
+		E573DF342919A1540065C7E0 /* ExampleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573DF332919A1540065C7E0 /* ExampleViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		E5668FE728FC5EE700DECA54 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
 		E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAssemblerTest.swift; sourceTree = "<group>"; };
 		E573DF2E2917E9560065C7E0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		E573DF332919A1540065C7E0 /* ExampleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E50DCED4291477FA002358D3 /* XCTestDynamicOverlay in Frameworks */,
+				E504F33C2919A511000196EB /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,7 @@
 		E50DCEC8291459AC002358D3 /* ExampleScene */ = {
 			isa = PBXGroup;
 			children = (
+				E573DF322919A1390065C7E0 /* View */,
 				E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */,
 				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
 				E50DCED02914681C002358D3 /* ExampleRouterTests.swift */,
@@ -291,6 +294,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E573DF322919A1390065C7E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E573DF332919A1540065C7E0 /* ExampleViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,7 +319,7 @@
 			);
 			name = VIPExample;
 			packageProductDependencies = (
-				E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */,
+				E504F33B2919A511000196EB /* SnapshotTesting */,
 			);
 			productName = VIPExample;
 			productReference = E5668F8628FC4E2F00DECA54 /* VIPExample.app */;
@@ -361,7 +372,7 @@
 			);
 			mainGroup = E5668F7D28FC4E2F00DECA54;
 			packageReferences = (
-				E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */,
+				E504F33A2919A511000196EB /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = E5668F8728FC4E2F00DECA54 /* Products */;
 			projectDirPath = "";
@@ -431,6 +442,7 @@
 				E5668FA128FC4E3100DECA54 /* VIPExampleTests.swift in Sources */,
 				E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */,
 				E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */,
+				E573DF342919A1540065C7E0 /* ExampleViewTests.swift in Sources */,
 				E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */,
 				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
 			);
@@ -703,21 +715,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */ = {
+		E504F33A2919A511000196EB /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/xctest-dynamic-overlay.git";
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.1;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E50DCED3291477FA002358D3 /* XCTestDynamicOverlay */ = {
+		E504F33B2919A511000196EB /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E50DCED2291477FA002358D3 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */;
-			productName = XCTestDynamicOverlay;
+			package = E504F33A2919A511000196EB /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

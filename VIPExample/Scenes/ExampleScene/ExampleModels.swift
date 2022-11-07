@@ -34,3 +34,15 @@ enum ExampleScene {
         let message: String
     }
 }
+
+#if DEBUG
+extension ExampleScene.List.ViewModel.Item {
+    static func fixture(
+        title: String = "title",
+        description: String = "description"
+    ) -> Self {
+        .init(title: title, description: description)
+    }
+}
+
+#endif

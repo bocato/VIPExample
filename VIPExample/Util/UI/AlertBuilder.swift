@@ -26,11 +26,6 @@ final class AlertBuilder: AlertBuilding {
     
     init() {}
     
-    @discardableResult func addAction(_ action: AlertAction) -> Self {
-        actions.append(action)
-        return self
-    }
-    
     @discardableResult func setTitle(_ title: String?) -> Self {
         self.title = title
         return self
@@ -43,6 +38,11 @@ final class AlertBuilder: AlertBuilding {
     
     @discardableResult func setStyle(_ style: UIAlertController.Style) -> Self {
         self.style = style
+        return self
+    }
+    
+    @discardableResult func addAction(_ action: AlertAction) -> Self {
+        actions.append(action)
         return self
     }
     
