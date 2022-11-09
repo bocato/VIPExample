@@ -14,11 +14,12 @@ final class ExampleViewController: UIViewController {
     var router: Router?
     private let tableViewDataSource: ExampleTableViewDataSource
     private let tableViewDelegate: ExampleTableViewDelegate
+    private let mainQueue: Dispatching
     
     // MARK: - Properties
     
     typealias CustomView = ExampleViewInterface
-    var customView: CustomView? {
+    var customView: ExampleViewInterface? {
         get { view as? CustomView }
         set { view = newValue }
     }
@@ -28,11 +29,13 @@ final class ExampleViewController: UIViewController {
     init(
         interactor: ExampleBusinessLogic,
         tableViewDataSource: ExampleTableViewDataSource,
-        tableViewDelegate: ExampleTableViewDelegate
+        tableViewDelegate: ExampleTableViewDelegate,
+        mainQueue: Dispatching = AsyncQueue.main
     ) {
         self.interactor = interactor
         self.tableViewDataSource = tableViewDataSource
         self.tableViewDelegate = tableViewDelegate
+        self.mainQueue = mainQueue
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -78,7 +81,7 @@ final class ExampleViewController: UIViewController {
 extension ExampleViewController: ExampleViewDisplayLogic {
     func displayExampleItems(_ viewModel: ExampleScene.List.ViewModel) {
         tableViewDataSource.items = viewModel.items
-        DispatchQueue.main.async {
+        mainQueue.dispatch {
             self.customView?.reloadTableView()
         }
     }

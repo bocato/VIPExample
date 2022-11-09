@@ -10,9 +10,9 @@ final class ExampleViewTests: XCTestCase {
         let dataSource: ExampleTableViewDataSource = .init()
         let delegate: ExampleTableViewDelegate = .init()
         dataSource.items = [
-            .fixture(),
-            .fixture(),
-            .fixture()
+            .fixture(title: "1"),
+            .fixture(title: "2"),
+            .fixture(title: "3"),
         ]
         let frame: CGRect = UIScreen.main.bounds
         let sut: ExampleView = .init(

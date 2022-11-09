@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-protocol ExampleViewInterface: UIView {
+protocol ExampleViewInterface where Self: UIView {
     func reloadTableView()
 }
 

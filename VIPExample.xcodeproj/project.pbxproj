@@ -20,6 +20,8 @@
 		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
 		E560E3352919ADED00A09AF6 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E560E3342919ADED00A09AF6 /* SnapshotTesting */; };
 		E560E3382919AE5700A09AF6 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E560E3372919AE5700A09AF6 /* XCTestDynamicOverlay */; };
+		E560E33A291AF47400A09AF6 /* ExampleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */; };
+		E560E33D291AF9DB00A09AF6 /* DispatchingQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560E33C291AF9DB00A09AF6 /* DispatchingQueues.swift */; };
 		E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */; };
 		E5668F8C28FC4E2F00DECA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */; };
 		E5668F9328FC4E3000DECA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5668F9228FC4E3000DECA54 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractorTests.swift; sourceTree = "<group>"; };
 		E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenterTests.swift; sourceTree = "<group>"; };
 		E50DCED02914681C002358D3 /* ExampleRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouterTests.swift; sourceTree = "<group>"; };
+		E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewControllerTests.swift; sourceTree = "<group>"; };
+		E560E33C291AF9DB00A09AF6 /* DispatchingQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5668F8928FC4E2F00DECA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5668F8B28FC4E2F00DECA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,8 +158,17 @@
 				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
 				E50DCED02914681C002358D3 /* ExampleRouterTests.swift */,
 				E573DF2A2915B26C0065C7E0 /* ExampleAssemblerTest.swift */,
+				E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */,
 			);
 			path = ExampleScene;
+			sourceTree = "<group>";
+		};
+		E560E33B291AF9CB00A09AF6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				E560E33C291AF9DB00A09AF6 /* DispatchingQueues.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		E5668F7D28FC4E2F00DECA54 = {
@@ -234,6 +247,7 @@
 		E5668FC828FC54DF00DECA54 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E560E33B291AF9CB00A09AF6 /* Foundation */,
 				E50DCEB42911B92B002358D3 /* DependencyInjection */,
 				E5668FD428FC564200DECA54 /* Extensions */,
 				E5668FC928FC554600DECA54 /* UI */,
@@ -414,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E560E33D291AF9DB00A09AF6 /* DispatchingQueues.swift in Sources */,
 				E5668F8A28FC4E2F00DECA54 /* AppDelegate.swift in Sources */,
 				E5668FD128FC55DA00DECA54 /* ViewCode.swift in Sources */,
 				E50DCEB12911B4A7002358D3 /* ExampleTableViewDataSource.swift in Sources */,
@@ -451,6 +466,7 @@
 				E573DF342919A1540065C7E0 /* ExampleViewTests.swift in Sources */,
 				E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */,
 				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
+				E560E33A291AF47400A09AF6 /* ExampleViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

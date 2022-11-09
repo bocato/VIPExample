@@ -9,7 +9,7 @@ enum ExampleScene {
         }
         struct ViewModel {
             let items: [Item]
-            struct Item {
+            struct Item: Equatable {
                 let title: String
                 let description: String
             }
