@@ -18,6 +18,7 @@
 		E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */; };
 		E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */; };
 		E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DCED02914681C002358D3 /* ExampleRouterTests.swift */; };
+		E526FE6C291D934F00D5F141 /* GetExampleItemsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526FE6B291D934F00D5F141 /* GetExampleItemsWorkerTests.swift */; };
 		E560E3352919ADED00A09AF6 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E560E3342919ADED00A09AF6 /* SnapshotTesting */; };
 		E560E3382919AE5700A09AF6 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E560E3372919AE5700A09AF6 /* XCTestDynamicOverlay */; };
 		E560E33A291AF47400A09AF6 /* ExampleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */; };
@@ -67,6 +68,7 @@
 		E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractorTests.swift; sourceTree = "<group>"; };
 		E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenterTests.swift; sourceTree = "<group>"; };
 		E50DCED02914681C002358D3 /* ExampleRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouterTests.swift; sourceTree = "<group>"; };
+		E526FE6B291D934F00D5F141 /* GetExampleItemsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExampleItemsWorkerTests.swift; sourceTree = "<group>"; };
 		E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewControllerTests.swift; sourceTree = "<group>"; };
 		E560E33C291AF9DB00A09AF6 /* DispatchingQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 		E50DCEC8291459AC002358D3 /* ExampleScene */ = {
 			isa = PBXGroup;
 			children = (
+				E526FE6A291D933E00D5F141 /* Workers */,
 				E573DF322919A1390065C7E0 /* View */,
 				E50DCEC9291459C1002358D3 /* ExampleInteractorTests.swift */,
 				E50DCECE29146249002358D3 /* ExamplePresenterTests.swift */,
@@ -161,6 +164,14 @@
 				E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */,
 			);
 			path = ExampleScene;
+			sourceTree = "<group>";
+		};
+		E526FE6A291D933E00D5F141 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				E526FE6B291D934F00D5F141 /* GetExampleItemsWorkerTests.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		E560E33B291AF9CB00A09AF6 /* Foundation */ = {
@@ -464,6 +475,7 @@
 				E50DCECA291459C1002358D3 /* ExampleInteractorTests.swift in Sources */,
 				E50DCECF29146249002358D3 /* ExamplePresenterTests.swift in Sources */,
 				E573DF342919A1540065C7E0 /* ExampleViewTests.swift in Sources */,
+				E526FE6C291D934F00D5F141 /* GetExampleItemsWorkerTests.swift in Sources */,
 				E573DF2B2915B26C0065C7E0 /* ExampleAssemblerTest.swift in Sources */,
 				E50DCED12914681C002358D3 /* ExampleRouterTests.swift in Sources */,
 				E560E33A291AF47400A09AF6 /* ExampleViewControllerTests.swift in Sources */,

@@ -43,3 +43,15 @@ struct ItemsService: ItemsServiceProtocol {
         }
     }    
 }
+
+#if DEBUG
+import XCTestDynamicOverlay
+
+final class ItemsServiceStub: ItemsServiceProtocol {
+    var getItemsResultToBeReturned: Result<[ItemEntity], ItemsServiceError> = .success([])
+    func getItems(then: @escaping (Result<[ItemEntity], ItemsServiceError>) -> Void) {
+        then(getItemsResultToBeReturned)
+    }
+}
+
+#endif
