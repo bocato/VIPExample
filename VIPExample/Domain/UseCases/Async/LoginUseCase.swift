@@ -33,7 +33,7 @@ struct LoginUseCase: LoginUseCaseProtocol {
     }
 }
 
-// Example Helpers
+// Supporting elements for the example
 struct User {}
 
 protocol LoginServiceProtocol {

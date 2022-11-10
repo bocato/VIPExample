@@ -21,6 +21,7 @@
 		E526FE5F291CE48300D5F141 /* SumListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526FE5E291CE48300D5F141 /* SumListUseCase.swift */; };
 		E526FE62291CE4DB00D5F141 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526FE61291CE4DB00D5F141 /* LoginUseCase.swift */; };
 		E526FE67291CEDEB00D5F141 /* UserRegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526FE66291CEDEB00D5F141 /* UserRegistrationWorker.swift */; };
+		E526FE69291CF44C00D5F141 /* ShoppingBagLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526FE68291CF44C00D5F141 /* ShoppingBagLogicController.swift */; };
 		E560E3352919ADED00A09AF6 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E560E3342919ADED00A09AF6 /* SnapshotTesting */; };
 		E560E3382919AE5700A09AF6 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = E560E3372919AE5700A09AF6 /* XCTestDynamicOverlay */; };
 		E560E33A291AF47400A09AF6 /* ExampleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */; };
@@ -73,6 +74,7 @@
 		E526FE5E291CE48300D5F141 /* SumListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumListUseCase.swift; sourceTree = "<group>"; };
 		E526FE61291CE4DB00D5F141 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		E526FE66291CEDEB00D5F141 /* UserRegistrationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationWorker.swift; sourceTree = "<group>"; };
+		E526FE68291CF44C00D5F141 /* ShoppingBagLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagLogicController.swift; sourceTree = "<group>"; };
 		E560E339291AF47400A09AF6 /* ExampleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewControllerTests.swift; sourceTree = "<group>"; };
 		E560E33C291AF9DB00A09AF6 /* DispatchingQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
 		E5668F8628FC4E2F00DECA54 /* VIPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +217,7 @@
 		E526FE65291CED9100D5F141 /* LogicControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E526FE68291CF44C00D5F141 /* ShoppingBagLogicController.swift */,
 			);
 			path = LogicControllers;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				E50DCEA429103828002358D3 /* ExampleRouter.swift in Sources */,
 				E526FE5F291CE48300D5F141 /* SumListUseCase.swift in Sources */,
 				E526FE62291CE4DB00D5F141 /* LoginUseCase.swift in Sources */,
+				E526FE69291CF44C00D5F141 /* ShoppingBagLogicController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -88,7 +88,7 @@ struct UserRegistrationWorker: UserRegistrationWorkerProtocol {
 }
 
 
-// Example Helpers
+// Supporting elements for the example
 protocol VerifyPasswordStrenghtUseCaseProtocol {
     typealias Input = String
     typealias Output = Int
