@@ -11,7 +11,7 @@ protocol LoginUseCaseProtocol {
     )
 }
 
-final class LoginUseCase: LoginUseCaseProtocol {
+struct LoginUseCase: LoginUseCaseProtocol {
     private let loginService: LoginServiceProtocol
     
     init(loginService: LoginServiceProtocol) {
@@ -33,7 +33,7 @@ final class LoginUseCase: LoginUseCaseProtocol {
     }
 }
 
-// Helpers
+// Example Helpers
 struct User {}
 
 protocol LoginServiceProtocol {
