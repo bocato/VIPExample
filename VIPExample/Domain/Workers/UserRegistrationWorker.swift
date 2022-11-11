@@ -51,7 +51,6 @@ struct UserRegistrationWorker: UserRegistrationWorkerProtocol {
             guard passwordStrenght >= 5 else {
                 promise(.failure(.weakPassword))
                 return
-                
             }
             
             let isUserValid = validateUserNameUseCase.execute(request.username)
