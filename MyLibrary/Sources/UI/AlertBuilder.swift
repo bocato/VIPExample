@@ -1,0 +1,120 @@
+import UIKit
+
+public struct AlertAction {
+    public let title: String
+    public let style: UIAlertAction.Style
+    public let handler: (() -> Void)?
+    
+    public init(title: String, style: UIAlertAction.Style, handler: (() -> Void)?) {
+        self.title = title
+        self.style = style
+        self.handler = handler
+    }
+}
+
+public protocol AlertBuilding {
+    @discardableResult func setTitle(_ title: String?) -> Self
+    @discardableResult func setMessage(_ message: String?) -> Self
+    @discardableResult func setStyle(_ style: UIAlertController.Style) -> Self
+    @discardableResult func addAction(_ action: AlertAction) -> Self
+    func build() -> UIAlertController
+}
+
+public final class AlertBuilder: AlertBuilding {
+    // MARK: - Properties
+    
+    private var title: String?
+    private var message: String?
+    private var style: UIAlertController.Style = .alert
+    private var actions: [AlertAction] = []
+    
+    // MARK: - Initialization
+    
+    public init() {}
+    
+    @discardableResult public func setTitle(_ title: String?) -> Self {
+        self.title = title
+        return self
+    }
+    
+    @discardableResult public func setMessage(_ message: String?) -> Self {
+        self.message = message
+        return self
+    }
+    
+    @discardableResult public func setStyle(_ style: UIAlertController.Style) -> Self {
+        self.style = style
+        return self
+    }
+    
+    @discardableResult public func addAction(_ action: AlertAction) -> Self {
+        actions.append(action)
+        return self
+    }
+    
+    public func build() -> UIAlertController {
+        let alertController: UIAlertController = .init(
+            title: title,
+            message: message,
+            preferredStyle: style
+        )
+        actions.forEach {
+            alertController.addAction($0.asUIAlertAction())
+        }
+        return alertController
+    }
+}
+
+extension AlertAction {
+    func asUIAlertAction() -> UIAlertAction {
+        .init(
+            title: title,
+            style: style,
+            handler: { [handler] _ in handler?() }
+        )
+    }
+}
+
+#if DEBUG
+final class AlertBuilderMock: AlertBuilding {
+    private var realBuilder: AlertBuilder = .init()
+    
+    init() {}
+    
+    private(set) var titlePassed: String?
+    func setTitle(_ title: String?) -> AlertBuilderMock {
+        titlePassed = title
+        realBuilder.setTitle(title)
+        return self
+    }
+    
+    private(set) var messagePassed: String?
+    func setMessage(_ message: String?) -> AlertBuilderMock {
+        messagePassed = message
+        realBuilder.setMessage(message)
+        return self
+    }
+    
+    private(set) var stylePassed: UIAlertController.Style?
+    func setStyle(_ style: UIAlertController.Style) -> AlertBuilderMock {
+        stylePassed = style
+        realBuilder.setStyle(style)
+        return self
+    }
+    
+    var addActionCalled: Bool { addActionCalledTimes > 0 }
+    var addActionCalledTimes: Int { actionsPassed.count }
+    private(set) var actionsPassed: [AlertAction] = []
+    func addAction(_ action: AlertAction) -> AlertBuilderMock {
+        actionsPassed.append(action)
+        realBuilder.addAction(action)
+        return self
+    }
+    
+    private(set) var buildCalled = false
+    func build() -> UIAlertController {
+        buildCalled = true
+        return realBuilder.build()
+    }
+}
+#endif

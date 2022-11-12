@@ -1,0 +1,14 @@
+▿ Optional<Array<ExampleItem>>
+  ▿ some: 3 elements
+    ▿ ExampleItem
+      - description: "simpleDescription"
+      - fullDescription: "fullDescription"
+      - name: "Item 1"
+    ▿ ExampleItem
+      - description: "simpleDescription"
+      - fullDescription: "fullDescription"
+      - name: "Item 2"
+    ▿ ExampleItem
+      - description: "simpleDescription"
+      - fullDescription: "fullDescription"
+      - name: "Item 3"
